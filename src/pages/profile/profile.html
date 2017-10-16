@@ -1,0 +1,53 @@
+<ion-content no-bounce>
+  <call-button></call-button>
+  <ion-list no-lines>
+    <ion-list-header text-center>
+      Your Profile
+    </ion-list-header>
+    <ion-grid *ngIf="profileForm">
+      <form [formGroup]="profileForm">
+        <ion-row>
+          <ion-col col-6>
+            <ion-item class="form-input">
+              <ion-input formControlName="name" placeholder="Name"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-6>
+            <ion-item class="form-input">
+              <ion-input formControlName="lastname" placeholder="Lastname"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item class="form-input">
+              <ion-input formControlName="phone" placeholder="Phone number"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <ion-item class="form-input form-input-large">
+              <ion-input formControlName="email" placeholder="Email"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </form>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button full round icon-right class="center-button" (click)="goToHomePage()">
+            Back
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button full round icon-right class="center-button" (click)="saveProfile()">
+            Save
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <footer></footer>
+</ion-footer>

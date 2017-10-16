@@ -1,0 +1,23 @@
+footer {
+
+  img {
+    height: 7vh !important;
+    width: auto !important;
+    margin: auto;
+    display: block;
+  }
+
+  p {
+    font-size: .9em;
+    color: color($colors, primary, base);
+  }
+
+  a {
+    color: color($colors, secondary, base);
+    text-decoration: none;
+  }
+
+  .clean::before, footer::before, .footer-md::before {
+    height: 0px;
+  }
+}

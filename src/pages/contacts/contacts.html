@@ -1,0 +1,55 @@
+<ion-content no-bounce>
+  <call-button></call-button>
+  <ion-list no-lines>
+    <ion-list-header text-center>
+      CONTACTS
+    </ion-list-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <p class="info-text" text-center>
+            Choose two emergency contacts.<br><b>They will receive an SMS with your location.</b>
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <button ion-button outline block round icon-right (click)="selectContact1()">
+            {{ contact1 ? contact1.name : 'CONTACT 1' }} <br>
+            {{ contact1 ? contact1.phone : '' }}
+          </button>
+        </ion-col>
+        <ion-col col-4>
+           <ion-item *ngIf="contact1">
+            <ion-label color="primary">SMS</ion-label>
+            <ion-checkbox [(ngModel)]="contact1.sms" (ionChange)="saveContact1()"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-8>
+          <button ion-button outline block round icon-right (click)="selectContact2()">
+              {{ contact2 ? contact2.name : 'CONTACT 2' }} <br>
+              {{ contact2 ? contact2.phone : '' }}
+          </button>
+        </ion-col>
+        <ion-col col-4>
+           <ion-item *ngIf="contact2">
+            <ion-label color="primary">SMS</ion-label>
+            <ion-checkbox [(ngModel)]="contact2.sms" (ionChange)="saveContact2()"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <button ion-button round icon-right class="center-button" (click)="goToHomePage()">
+            Back
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <footer></footer>
+</ion-footer>

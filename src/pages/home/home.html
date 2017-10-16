@@ -1,0 +1,35 @@
+<ion-content padding>
+  <call-button [fullSize]="true"></call-button>
+  <h3 text-center>Ionic Emergency</h3>
+  <ion-grid padding-top>
+    <ion-row>
+      <ion-col col-6>
+        <button *ngIf="contact1" ion-button full round (click)="callContactNumber(contact1.phone,contact1.sms)">
+          {{ contact1.name }}
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button *ngIf="contact2" ion-button full round (click)="callContactNumber(contact2.phone,contact2.sms)">
+          {{ contact2.name }}
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button full round (click)="goToProfilePage()">
+          <ion-icon name="person"></ion-icon>
+          <p>Profile</p>
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button full round (click)="goToContactsPage()">
+          <ion-icon name="people"></ion-icon>
+          <p>Contacts</p>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <footer></footer>
+</ion-footer>

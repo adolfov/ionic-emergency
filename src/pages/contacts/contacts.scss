@@ -1,0 +1,17 @@
+page-contacts {
+
+  ion-checkbox {
+    margin: 4px !important;
+  }
+
+  .item-checkbox {
+    font-size: 1em;
+    background: transparent;
+  }
+
+  .info-text {
+    font-size: 1em;
+    color: color($colors, info, base);
+  }
+
+}

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="goToContactsPage()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title *ngIf="!searching">Select a contact</ion-title>
+    <ion-searchbar *ngIf="searching" placeholder="Search" debounce=500 (ionInput)="filterContacts($event)"></ion-searchbar>
+    <ion-buttons end>
+      <button ion-button icon-only *ngIf="!searching" (click)="searching = true;">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only *ngIf="searching" (click)="searching = false; contactFilteredList = contactList;">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-list>
+    <ion-item *ngFor="let contact of contactFilteredList" (click)="contactSelected(contact)">
+      <ion-avatar item-start>
+        <img [src]="getPhotoSrc(contact)">
+      </ion-avatar>
+      {{ contact.displayName }}
+    </ion-item>
+  </ion-list>
+</ion-content>
