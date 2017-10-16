@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Profile } from '../../app/models.interface';
@@ -23,8 +23,7 @@ export class ProfilePage {
     public formBuilder: FormBuilder,
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
-    private storage: Storage,
-    private modalCtrl: ModalController
+    private storage: Storage
   ) {
     this.storage.get('ie-profile').then((profile) => {
       if (!profile) {
